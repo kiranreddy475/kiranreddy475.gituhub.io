@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="systemtime.css" />
+    <title>:: welcome to TEAM ENGINEERS ::</title>
+  </head>
+  <body>
+    <header class="flex_header">
+      <div class="teameng">
+        TeamEng SG300-10PP 10-Port Gigabit PoE+ Managed Switch
+      </div>
+
+      <div class="nav_info_container">
+        <span class="nav_info">TEAM LINK</span>
+        <span class="nav_info">Logout</span>
+        <span class="nav_info">About</span>
+        <span class="nav_info">Help</span>
+      </div>
+    </header>
+
+    <div class="sidenav">
+      <a href="home.html">Home</a>
+      <button class="dropdown-btn">Configuration Management</button>
+      <div class="dropdown-container">
+        <a href="sysconfig.html">System Configuration</a>
+        <a href="switch_config.html">Switch Configuration</a>
+        <a href="stpstatus.html">STP status and Global Settings</a>
+        <!-- <a href="RSTP_config.html">RSTP Configuration</a> -->
+      </div>
+      <button class="dropdown-btn">Status Management</button>
+      <div class="dropdown-container">
+        <a href="RMON_statistics.html">RMON statistics</a>
+        <a href="RSTP_status.html">RSTP Status</a>
+      </div>
+      <a href="#services">Maintainence</a>
+      <a href="#clients">System Log</a>
+      <button class="dropdown-btn">Spanning tree</button>
+      <div class="dropdown-container">
+        <!-- <a href="stpstatus.html">STP status and Global Settings</a> -->
+        <a href="stpinterface.html">STP Interface Settings</a>
+        <a href="Rstpinterface.html">RSTP Interface Settings</a>
+      </div>
+      <a href="#contact">Reboot</a>
+    </div>
+
+    <div class="mainbody">
+      <div class="VMUX">System Time</div>
+      <div class="right-box">
+        <!--  content for right box -->
+        <p>
+          Dynamic Time Zone and Daylight Saving Time configurations from DHCP,
+          if received,override manual configurations
+        </p>
+        <p1>Actual Time(static): 15.1888</p1>
+        <p2>Last Synchronized Server: Unsynchronized</p2>
+
+        <div class="form-group">
+          <h4>Clock Source Settings</h4>
+          <table class="settings-table">
+            <tr>
+              <td>Main Clock Source SNTP Server</td>
+              <td>
+                <label><input type="checkbox" />Enable</label>
+              </td>
+            </tr>
+            <tr>
+              <td>Alternate Clock Source PC (HTTP/HTTPS sessions)</td>
+              <td>
+                <label><input type="checkbox" />Enable</label>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="foam-group">
+          <h4>Manual Settings</h4>
+          <p>Set the time and date manually or click</p>
+
+          <table>
+            <tr>
+              <th class="settings"></th>
+              <th class="input"></th>
+              <th class="description"></th>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td><input type="text" value="2024-Aug-03" />(YYY-MM-DD)</td>
+            </tr>
+            <td>Local time</td>
+            <td><input type="text" value="11:30:42" />(HH:MM:SS)</td>
+          </table>
+        </div>
+        <div classs="firm-group">
+          <h4>Time Zone Settings</h4>
+          <table>
+            <tr>
+              <th class="settings"></th>
+              <th class="input"></th>
+              <th class="description"></th>
+            </tr>
+            <tr>
+              <td>Get Timezone from DHCP</td>
+              <td><input type="checkbox" /> Enable</td>
+            </tr>
+            <tr>
+              <td>Timezone from DHCP</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Timezone Offset</td>
+              <td>
+                <select>
+                  <option value="">UTC</option>
+                  <option value="-12.00">UTC -12.00</option>
+                  <option value="-11.00">UTC -11.00</option>
+                  <option value="-10.00">UTC -10.00</option>
+                  <option value="-9.00">UTC -9.00</option>
+                  <option value="-8.00">UTC -8.00</option>
+                  <option value="-7.00">UTC -7.00</option>
+                  <option value="-6.00">UTC -6.00</option>
+                  <option value="-5.00">UTC -5.00</option>
+                  <option value="-4.00">UTC -4.00</option>
+                  <option value="-3.00">UTC -3.00</option>
+                  <option value="-2.00">UTC -2.00</option>
+                  <option value="-1.00">UTC -1.00</option>
+                  <option value="1.00">UTC +1.00</option>
+                  <option value="2.00">UTC +2.00</option>
+                  <option value="3.00">UTC +3.00</option>
+                  <option value="4.00">UTC +4.00</option>
+                  <option value="5.00">UTC +5.00</option>
+                  <option value="6.00">UTC +6.00</option>
+                  <option value="7.00">UTC +7.00</option>
+                  <option value="8.00">UTC +8.00</option>
+                  <option value="9.00">UTC +9.00</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Time Zone Acronym</td>
+              <td><input type="text" />0/4 characters used</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="buttons">
+          <button type="button">Apply</button>
+          <button type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>
+        © 2009.<a
+          class="footer_a"
+          href="http://www.teamengineers.in/"
+          target="_blank"
+          >www.teamengineers.in</a
+        >
+      </div>
+      <div>
+        Best viewed with IE 6.0 + at resolution of 1024 X 768 with text size as
+        medium.
+      </div>
+    </footer>
+
+    <script src="systemtime.js"></script>
+  </body>
+</html>

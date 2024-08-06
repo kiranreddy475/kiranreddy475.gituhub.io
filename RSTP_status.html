@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="RSTP_status.css" />
+    <title>:: welcome to TEAM ENGINEERS ::</title>
+  </head>
+  <body>
+    <header class="flex_header">
+      <div class="teameng">
+        TeamEng SG300-10PP 10-Port Gigabit PoE+ Managed Switch
+      </div>
+
+      <div class="nav_info_container">
+        <a class="nav_info" href="#">TEAM LINK</a>
+        <a class="nav_info" href="#">Logout</a>
+        <a class="nav_info" href="#">About</a>
+        <a class="nav_info" href="#">Help</a>
+      </div>
+    </header>
+
+    <div class="sidenav">
+      <a href="home.html">Home</a>
+      <button class="dropdown-btn">Configuration Management</button>
+      <div class="dropdown-container">
+        <a href="sysconfig.html">System Configuration</a>
+        <a href="switch_config.html">Switch Configuration</a>
+        <a href="stpstatus.html">STP status and Global Settings</a>
+        <!-- <a href="RSTP_config.html">RSTP Configuration</a> -->
+      </div>
+      <button class="dropdown-btn">Status Management</button>
+      <div class="dropdown-container">
+        <a href="RMON_statistics.html">RMON statistics</a>
+        <a href="RSTP_status.html">RSTP Status</a>
+      </div>
+      <a href="#services">Maintainence</a>
+      <a href="#clients">System Log</a>
+      <button class="dropdown-btn">Spanning tree</button>
+      <div class="dropdown-container">
+        <!-- <a href="stpstatus.html">STP status and Global Settings</a> -->
+        <a href="stpinterface.html">STP Interface Settings</a>
+        <a href="Rstpinterface.html">RSTP Interface Settings</a>
+      </div>
+      <a href="#contact">Reboot</a>
+    </div>
+
+    <div class="mainbody">
+      <div class="VMUX">System Configuration</div>
+      <div class="right-box">
+        <!--  content for right box -->
+        <table width="100%" height="100%">
+          <tr height="20">
+            <td colspan="5" bgcolor="#AFCBCF">
+              <div align="center" class="style20">
+                <strong>2E1_RSTP_CARD STATUS</strong>
+              </div>
+            </td>
+          </tr>
+          <tr bgcolor="#EFEFEF" height="19">
+            <td width="220" height="8">&nbsp;</td>
+            <td width="220" height="8" class="style26">Select Card</td>
+            <td
+              height="8"
+              width="220"
+              colspan="2"
+              bgcolor="#EFEFEF"
+              align="center"
+            >
+              <select
+                name="Slot"
+                id="Slot"
+                style="width: 120px"
+                onChange="Slot()"
+              >
+                <option value="0">Select...</option>
+                <option value="1">Slot1</option>
+                <option value="2">Slot2</option>
+                <option value="3">Slot3</option>
+              </select>
+            </td>
+            <td width="220" height="8">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="19">
+            <td></td>
+            <td class="style26">Interface_Card</td>
+            <td colspan="2" align="center">
+              <label id="interface_card_name"></label>
+            </td>
+            <td></td>
+          </tr>
+          <tr bgcolor="#EFEFEF" height="19">
+            <td></td>
+            <td class="style26">Bridge Id</td>
+            <td colspan="2" align="center"><label id="bridge_id"></label></td>
+            <td></td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="19">
+            <td></td>
+            <td class="style26">Root Bridge Id</td>
+            <td colspan="2" align="center">
+              <label id="root_bridge_id"></label>
+            </td>
+            <td></td>
+          </tr>
+          <tr bgcolor="#EFEFEF" height="19">
+            <td height="8"></td>
+            <td class="style26">Root Bridge Priority</td>
+            <td colspan="2" align="center">
+              <label id="root_bridge_priority"></label>
+            </td>
+            <td></td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="19">
+            <td height="8"></td>
+            <td class="style26">Topology Change Count</td>
+            <td colspan="2" align="center">
+              <label id="topology_change_count"></label>
+            </td>
+            <td></td>
+          </tr>
+          <tr height="20">
+            <td height="22" colspan="5" bgcolor="#AFCBCF">
+              <div align="center" class="style42">E1 PORT LINK STATUS</div>
+            </td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="20">
+            <td class="style26">&nbsp;</td>
+            <td width="284" align="center" class="style41">E1_PORT1</td>
+            <td width="279" align="center" class="style41">E1_PORT2</td>
+            <td width="271" align="center" class="style41"></td>
+            <td width="272" align="center" class="style41"></td>
+          </tr>
+          <tr bgcolor="#EFEFEF" height="19">
+            <td class="style26">E1 Port Link</td>
+            <td align="center"><label id="e1_p1_l1"></label></td>
+            <td align="center"><label id="e1_p2_l1"></label></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="19">
+            <td><strong class="style26">E1 Port AIS </strong></td>
+            <td align="center"><label id="e1_p1_ai"></label></td>
+            <td align="center"><label id="e1_p2_ai"></label></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr bgcolor="#EFEFEF" height="19">
+            <td>
+              <span class="style26"
+                >E1 <strong class="style26"> Port FLOS </strong></span
+              >
+            </td>
+            <td align="center"><label id="e1_p1_flos"></label></td>
+            <td align="center"><label id="e1_p2_flos"></label></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="19">
+            <td><strong class="style26">E1 Port RAL </strong></td>
+            <td align="center"><label id="e1_p1_ral"></label></td>
+            <td align="center"><label id="e1_p2_ral"></label></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr height="20">
+            <td height="22" colspan="5" bgcolor="#AFCBCF">
+              <div align="center" class="style42">ETHERNET LINK STATUS</div>
+            </td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="20">
+            <td class="style26">&nbsp;</td>
+            <td width="284" align="center" class="style41">PORT1</td>
+            <td width="279" align="center" class="style41">PORT2</td>
+            <td width="271" align="center" class="style41">PORT3</td>
+            <td width="272" align="center" class="style41">PORT4</td>
+          </tr>
+          <tr bgcolor="#EFEFEF" height="19">
+            <td class="style26">Port Link</td>
+            <td align="center"><label id="portlink_p1"></label></td>
+            <td align="center"><label id="portlink_p2"></label></td>
+            <td align="center"><label id="portlink_p3"></label></td>
+            <td align="center"><label id="portlink_p4"></label></td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="19">
+            <td><strong class="style26">Port Status</strong></td>
+            <td align="center"><label id="portstatus_p1"></label></td>
+            <td align="center"><label id="portstatus_p2"></label></td>
+            <td align="center"><label id="portstatus_p3"></label></td>
+            <td align="center"><label id="portstatus_p4"></label></td>
+          </tr>
+          <tr bgcolor="#EFEFEF" height="19">
+            <td><strong class="style26">Port State(Role)</strong></td>
+            <td align="center"><label id="port_state_role_p1"></label></td>
+            <td align="center"><label id="port_state_role_p2"></label></td>
+            <td align="center"><label id="port_state_role_p3"></label></td>
+            <td align="center"><label id="port_state_role_p4"></label></td>
+          </tr>
+          <tr bgcolor="#F5F5F5" height="19">
+            <td><strong class="style26">Ingress Cost</strong></td>
+            <td align="center"><label id="ingresscost_p1"></label></td>
+            <td align="center"><label id="ingresscost_p2"></label></td>
+            <td align="center"><label id="ingresscost_p3"></label></td>
+            <td align="center"><label id="ingresscost_p4"></label></td>
+          </tr>
+          <tr bgcolor="#EFEFEF" height="19">
+            <td><strong class="style26">Egress Cost</strong></td>
+            <td align="center"><label id="egresscost_p1"></label></td>
+            <td align="center"><label id="egresscost_p2"></label></td>
+            <td align="center"><label id="egresscost_p3"></label></td>
+            <td align="center"><label id="egresscost_p4"></label></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>
+        © 2009.<a
+          class="footer_a"
+          href="http://www.teamengineers.in/"
+          target="_blank"
+          >www.teamengineers.in</a
+        >
+      </div>
+      <div>
+        Best viewed with IE 6.0 + at resolution of 1024 X 768 with text size as
+        medium.
+      </div>
+    </footer>
+
+    <script src="RSTP_status.js"></script>
+  </body>
+</html>

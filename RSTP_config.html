@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="RSTP_config.css" />
+    <title>:: welcome to TEAM ENGINEERS ::</title>
+  </head>
+  <body>
+    <header class="flex_header">
+      <div class="teameng">
+        TeamEng SG300-10PP 10-Port Gigabit PoE+ Managed Switch
+      </div>
+
+      <div class="nav_info_container">
+        <a class="nav_info" href="#">TEAM LINK</a>
+        <a class="nav_info" href="#">Logout</a>
+        <a class="nav_info" href="#">About</a>
+        <a class="nav_info" href="#">Help</a>
+      </div>
+    </header>
+
+    <div class="sidenav">
+      <a href="home.html">Home</a>
+      <button class="dropdown-btn">Configuration Management</button>
+      <div class="dropdown-container">
+        <a href="sysconfig.html">System Configuration</a>
+        <a href="switch_config.html">Switch Configuration</a>
+        <a href="stpstatus.html">STP status and Global Settings</a>
+        <!-- <a href="RSTP_config.html">RSTP Configuration</a> -->
+      </div>
+      <button class="dropdown-btn">Status Management</button>
+      <div class="dropdown-container">
+        <a href="RMON_statistics.html">RMON statistics</a>
+        <a href="RSTP_status.html">RSTP Status</a>
+      </div>
+      <a href="#services">Maintainence</a>
+      <a href="#clients">System Log</a>
+      <button class="dropdown-btn">Spanning tree</button>
+      <div class="dropdown-container">
+        <!-- <a href="stpstatus.html">STP status and Global Settings</a> -->
+        <a href="stpinterface.html">STP Interface Settings</a>
+        <a href="Rstpinterface.html">RSTP Interface Settings</a>
+      </div>
+      <a href="#contact">Reboot</a>
+    </div>
+
+    <div class="mainbody">
+      <div class="VMUX">VMUX</div>
+      <div class="right-box">
+        <!--  content for right box -->
+        <td colspan="4" rowspan="6">
+          <table class="table">
+            <tr height="30" class="style43" align="center">
+              <td colspan="6">
+                2E1_RSTP_Ethernet / RSTP_Ethernet_Card Configuration
+              </td>
+            </tr>
+            <tr height="30" bgcolor="#F5F5F5">
+              <td width="33%"></td>
+              <td width="10%" align="center" class="style31">
+                <strong>Select Card</strong>
+              </td>
+              <td width="24%" colspan="2" align="left" class="style26">
+                <span class="style31"
+                  ><strong>:</strong>
+                  <select
+                    name="select_slot"
+                    id="select_slot"
+                    style="width: 100px"
+                    onChange="slot_selection();"
+                  >
+                    <option value="0">Select...</option>
+                    <option value="1">Slot1</option>
+                    <option value="2">Slot2</option>
+                    <option value="3">Slot3</option>
+                  </select>
+                </span>
+              </td>
+              <td width="33%"></td>
+            </tr>
+            <tr height="30">
+              <td></td>
+              <td colspan="3" align="center" class="style26">
+                <label id="select_card_name"></label> &nbsp;
+              </td>
+              <td width="279" rowspan="8"></td>
+            </tr>
+            <tr height="20">
+              <td rowspan="7" class="style31">&nbsp;</td>
+              <td width="175" class="style31">&nbsp;</td>
+              <td width="175" align="left" class="style31">
+                <strong>&ensp;&nbsp;E1 PORT1</strong>
+              </td>
+              <td width="175" class="style31">
+                <strong>&ensp;&nbsp;E1 PORT2</strong>
+              </td>
+            </tr>
+            <tr height="30">
+              <td class="style31"><strong>E1 Framing</strong>&nbsp;</td>
+              <td class="style31">
+                <strong>:</strong>
+                <select
+                  name="e1p1_framing"
+                  id="e1p1_framing"
+                  style="width: 120px"
+                >
+                  <option value="1">Unframe</option>
+                  <option value="2">PCM31</option>
+                  <option value="3">PCM30</option>
+                  <option value="4">No Card</option>
+                  <option value="5">Not Applicable</option>
+                </select>
+              </td>
+              <td class="style31">
+                <strong>:</strong>&nbsp;<select
+                  name="e1p2_framing"
+                  id="e1p2_framing"
+                  style="width: 120px"
+                >
+                  <option value="1">Unframe</option>
+                  <option value="2">PCM31</option>
+                  <option value="3">PCM30</option>
+                  <option value="4">No Card</option>
+                  <option value="5">Not Applicable</option>
+                </select>
+              </td>
+            </tr>
+            <tr height="30">
+              <td class="style31"><strong>Speed</strong>&nbsp;</td>
+              <td class="style31">
+                <strong>:</strong>
+                <select name="e1p1_speed" id="e1p1_speed" style="width: 120px">
+                  <option value="1">64Kbps</option>
+                  <option value="2">128Kbps</option>
+                  <option value="3">192Kbps</option>
+                  <option value="4">256Kbps</option>
+                  <option value="5">320Kbps</option>
+                  <option value="6">384Kbps</option>
+                  <option value="7">448Kbps</option>
+                  <option value="8">512Kbps</option>
+                  <option value="9">576Kbps</option>
+                  <option value="10">640Kbps</option>
+                  <option value="11">704Kbps</option>
+                  <option value="12">768Kbps</option>
+                  <option value="13">832Kbps</option>
+                  <option value="14">896Kbps</option>
+                  <option value="15">960Kbps</option>
+                  <option value="16">1024Kbps</option>
+                  <option value="17">1088Kbps</option>
+                  <option value="18">1152Kbps</option>
+                  <option value="19">1216Kbps</option>
+                  <option value="20">1280Kbps</option>
+                  <option value="21">1344Kbps</option>
+                  <option value="22">1408Kbps</option>
+                  <option value="23">1472Kbps</option>
+                  <option value="24">1536Kbps</option>
+                  <option value="25">1600Kbps</option>
+                  <option value="26">1664Kbps</option>
+                  <option value="27">1728Kbps</option>
+                  <option value="28">1792Kbps</option>
+                  <option value="29">1856Kbps</option>
+                  <option value="30">1920Kbps</option>
+                  <option value="31">1984Kbps</option>
+                  <option value="32">2048kbps</option>
+                  <option value="33">No Card</option>
+                  <option value="34">Not Applicable</option>
+                </select>
+              </td>
+              <td class="style31">
+                <strong>:</strong>&nbsp;<select
+                  name="e1p2_speed"
+                  id="e1p2_speed"
+                  style="width: 120px"
+                >
+                  <option value="1">64Kbps</option>
+                  <option value="2">128Kbps</option>
+                  <option value="3">192Kbps</option>
+                  <option value="4">256Kbps</option>
+                  <option value="5">320Kbps</option>
+                  <option value="6">384Kbps</option>
+
+                  <option value="7">448Kbps</option>
+                  <option value="8">512Kbps</option>
+                  <option value="9">576Kbps</option>
+                  <option value="10">640Kbps</option>
+                  <option value="11">704Kbps</option>
+                  <option value="12">768Kbps</option>
+                  <option value="13">832Kbps</option>
+                  <option value="14">896Kbps</option>
+                  <option value="15">960Kbps</option>
+                  <option value="16">1024Kbps</option>
+                  <option value="17">1088Kbps</option>
+                  <option value="18">1152Kbps</option>
+                  <option value="19">1216Kbps</option>
+                  <option value="20">1280Kbps</option>
+                  <option value="21">1344Kbps</option>
+                  <option value="22">1408Kbps</option>
+                  <option value="23">1472Kbps</option>
+                  <option value="24">1536Kbps</option>
+                  <option value="25">1600Kbps</option>
+                  <option value="26">1664Kbps</option>
+                  <option value="27">1728Kbps</option>
+                  <option value="28">1792Kbps</option>
+                  <option value="29">1856Kbps</option>
+                  <option value="30">1920Kbps</option>
+                  <option value="31">1984Kbps</option>
+                  <option value="32">2048Kbps</option>
+                  <option value="33">No Card</option>
+                  <option value="34">Not Applicable</option>
+                </select>
+              </td>
+            </tr>
+            <tr height="30">
+              <td class="style31"><strong>CRC</strong>&nbsp;</td>
+              <td class="style31">
+                <strong>:</strong>
+                <select name="e1p1_crc" id="e1p1_crc" style="width: 120px">
+                  <option value="1">Enable</option>
+                  <option value="2">Disable</option>
+                  <option value="3">No Card</option>
+                  <option value="4">Not Applicable</option>
+                </select>
+              </td>
+              <td class="style31">
+                <strong>:</strong>&nbsp;<select
+                  name="e1p2_crc"
+                  id="e1p2_crc"
+                  style="width: 120px"
+                >
+                  <option value="1">Enable</option>
+                  <option value="2">Disable</option>
+                  <option value="3">No Card</option>
+                  <option value="4">Not Applicable</option>
+                </select>
+              </td>
+            </tr>
+            <tr height="30">
+              <td class="style31"><strong>Clock</strong></td>
+              <td class="style31">
+                <strong>:</strong>
+                <select name="e1p1_clock" id="e1p1_clock" style="width: 120px">
+                  <option value="1">Internal</option>
+                  <option value="2">Rec-E1</option>
+                  <option value="3">No Card</option>
+                  <option value="4">Not Applicable</option>
+                </select>
+              </td>
+              <td class="style31">
+                <strong>:</strong>&nbsp;<select
+                  name="e1p2_clock"
+                  id="e1p2_clock"
+                  style="width: 120px"
+                >
+                  <option value="1">Internal</option>
+                  <option value="2">Rec-E1</option>
+                  <option value="3">No Card</option>
+                  <option value="4">Not Applicable</option>
+                </select>
+              </td>
+            </tr>
+            <tr height="30">
+              <td class="style31"><strong>Ethernet Framing</strong></td>
+              <td class="style31">
+                <strong>: </strong>
+                <select
+                  name="e1p1_eth_framing"
+                  id="e1p1_eth_framing"
+                  style="width: 120px"
+                >
+                  <option value="1">HDLC</option>
+                  <option value="2">GFP</option>
+                  <option value="3">No Card</option>
+                  <option value="4">Not Applicable</option>
+                </select>
+              </td>
+              <td class="style31">
+                <strong>:</strong>&nbsp;<select
+                  name="e1p2_eth_framing"
+                  id="e1p2_eth_framing"
+                  style="width: 120px"
+                >
+                  <option value="1">HDLC</option>
+                  <option value="2">GFP</option>
+                  <option value="3">No Card</option>
+                  <option value="4">Not Applicable</option>
+                </select>
+              </td>
+            </tr>
+            <tr height="30">
+              <td class="style31"><strong>Bridge Priority</strong>&nbsp;</td>
+              <td colspan="2" class="style31">
+                <strong
+                  >:
+                  <input
+                    type="text"
+                    name="bridge_priority"
+                    id="bridge_priority"
+                    style="width: 120px"
+                  />
+                </strong>
+              </td>
+            </tr>
+            <tr height="30">
+              <td class="style31"></td>
+              <td colspan="2" class="style31">&nbsp;</td>
+            </tr>
+            <tr height="40">
+              <td align="center" colspan="5">
+                <input
+                  class="save"
+                  type="submit"
+                  name="Submit"
+                  value="Submit"
+                  onclick="rstp_config();"
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>
+        © 2024.<a
+          class="footer_a"
+          href="http://www.teamengineers.in/"
+          target="_blank"
+          >www.teamengineers.in</a
+        >
+      </div>
+      <div>
+        Best viewed with IE 6.0 + at resolution of 1024 X 768 with text size as
+        medium.
+      </div>
+    </footer>
+
+    <script src="RSTP_config.js"></script>
+  </body>
+</html>
